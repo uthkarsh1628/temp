@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function canto(){
+            let n= document.getElementById("name").value
+            let a= document.getElementById("age").value
+            let q= document.getElementById("qu").value
+            let p= document.getElementById("place").value
+            let str=`${n}|${a}|${q}|${p}`
+            msg.innerHTML=str
+        }
+    </script>
+</head>
+<body>
+   <p> <input type="text" id="name" placeholder="enter name"></p>
+   <p>  <input type="number" id="age"placeholder="enter age"></p>
+   <p> <input type="text" id="qu" placeholder="enter qualifiacion"></p>
+   <p> <input type="text" id="place" placeholder="enter place"></p>
+    <button onclick="canto()">create</button>
+    <div id="msg"></div>
+</body>
+</html>

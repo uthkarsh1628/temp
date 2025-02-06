@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //let name = "john"
+    //    // document.write("my name is "+ name)
+    //    document.write(`my name is ${name}`)
+    function calc(){
+        let num1=Number(document.getElementById("n1").value)
+        let num2=Number(document.getElementById("n2").value)
+        // d1.innerHTML=`${num1}+${num2}=${num1+num2}`
+        //  d2.innerHTML=`${num1}-${num2}=${num1-num2}`
+        //   d3.innerHTML=`${num1}*${num2}=${num1*num2}`
+        //    d4.innerHTML=`${num1}/${num2}=${num1/num2}`
+        let str =`${num1}+${num2}=${num1+num2}<br>`;
+        str=str+`${num1}*${num2}=${num1*num2}<br>`;
+        str=str+`${num1}-${num2}=${num1-num2}<br>`;
+        d1.innerHTML=str;
+    }
+    </script>
+</head>
+<body>
+    
+    <p><input type="number" id="n1" placeholder="enter num 1"></p>
+    <p> <input type="number" id="n2" placeholder="enter num 2"></p>
+    <button onclick="calc()">sudmit</button>
+    <p><div id="d1"></div></p>
+   <!-- <p> <div id="d2"></div></p>
+   <p>  <div id="d3"></div></p>
+   <p> <div id="d4"></div></p> -->
+</body>
+</html>

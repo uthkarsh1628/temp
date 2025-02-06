@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showdata(){
+            let n=document.getElementById("name").value
+            let e=document.getElementById("email").value
+            let p=document.getElementById("pass").value
+            let d=document.getElementById("dob").value
+            msg.innerHTML=`${n},${e},${p},${d}`
+        }
+    </script>
+    <style>
+        .container{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+        }
+        .box{
+            border: 2px solid silver;
+            width: 400px;
+            padding: 20px;
+            border-radius: 30px;
+            height: 400px;
+        }
+        input{
+            padding: 10px;
+            width: 90%;
+            border-radius: 20px;
+        }
+        button{
+            padding: 10px;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+            width: 90%;
+            border: solid whitesmoke;
+            
+        }
+        button:hover{
+            transform: scale(1.2,1.2);
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box">
+            <h1>Sign Up</h1>
+            <p><input type="text" id="name" placeholder="enter name"> </p>
+            <p><input type="email" id="email" placeholder="enter email"> </p>
+            <p><input type="password" id="pass" placeholder="enter password"> </p>
+            <p><input type="date" id="dob" placeholder="enter date of birth"> </p>
+            <button onclick="showdata()">Register</button>
+            <div id="msg">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

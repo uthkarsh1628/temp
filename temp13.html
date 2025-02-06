@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chkuser(e){
+
+            let username = document.getElementById("name").value;
+            let password=document.getElementById("pass").value
+            
+           if(username !=="abc@gmail.com"||password !=="12345")
+            msg.innerHTML="access denied"
+        else
+        msg.innerHTML="welcome abc"
+        }
+    </script>
+    <style>
+        .container{
+            
+           
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .box{
+            border: 2px solid silver;
+            padding: 20px;
+            width: 400px;
+            border-radius: 30px;
+        }
+        input{
+            padding: 20px;
+            width: 90%;
+        }
+        button{
+            background-color: blue;
+            width: 100%;
+            padding: 10px;
+           border-radius: 20px;
+           font-size: large;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box">
+    <p><div id="msg"></div></p>
+    <p><input type="email"  id="name" placeholder="enter email" ></p>
+    <p><input type="password"  id="pass" placeholder="password" ></p>
+    <p><button onclick="chkuser()">Login</button></p>
+</div>
+</div>
+</body>
+</html>

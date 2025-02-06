@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+             display: flex;
+            justify-content: center; 
+
+        }
+        .box{
+            border: 2px solid silver;
+            height: 400px;
+            width: 400px;
+            padding: 20px;
+            border-radius: 30px;
+        }
+    </style>
+    <script>
+        function showdata(){
+            let e=document.getElementById("email").value
+            let p=document.getElementById("pass").value
+            data.innerHTML=`${e},${p}`
+         
+
+
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <p><input type="email" id="email" placeholder="enter email"></p>
+            <p><input type="password" id="pass" placeholder="enter password"></p>
+            <button onclick="showdata()" style="color: blue;" >Log In</button>
+            <div id="data">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

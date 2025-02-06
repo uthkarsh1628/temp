@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function f1(){
+            let m=document.getElementById("marks").value
+           if(m>90)
+           msg.innerHTML="grade A"
+        else if(m>70)
+        msg.innerHTML="grade B"
+    else
+    msg.innerHTML="fail"
+
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="marks" placeholder="enter marks">
+    <button onclick="f1()">sudmit</button>
+    <hr>
+    <div id="msg">
+
+    </div>
+</body>
+</html>
