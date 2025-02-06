@@ -7,14 +7,22 @@
 </head>
 <script>
     function table(){
-        let num=document.getElementById("num").value
+        let str=""
+        let num=document.getElementById("num").value;
+        for(let i=1;i<=10;i++)
+    {
+        str+=`${num} x ${i} = ${num*i}<br>`
+    }
+    msg.innerHTML=str
+
+
 
     }
 
 </script>
 <body>
-    <p><input type="number" id="num" placeholder="enter number"></p>
-    <button onclick="table()">Create</button>
+    <p><input type="number" id="num" placeholder="enter number" onchange="table()"></p>
+    <!-- <button onclick="table()">Create</button> -->
     <hr>
     <div id="msg"></div>
     
