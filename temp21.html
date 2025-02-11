@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let users=[]
+        function checkuser(){
+            let email = document.getElementById("email").value;
+        let password = document.getElementById("pass").value;
+        let length = users.length
+        for(let i=0;i<length;i++){
+          if(users[i].email==email && users[i].pass==password){
+            root.innerHTML = `
+            <div>Welcome</div>
+            <button onclick='showlogin()'>Logout</button>
+            `
+          }
+          else{
+            root.innerHTML=`<div>"error"<div>
+            <button onclick='showlogin()'>Logout</button>`
+
+          }
+        }
+
+        }
+        function showlogin(){
+            root.innerHTML =`
+            <h1>login</h1>
+            <p><input type="email" id="email" placeholder="enter email"></p>
+            <p><input type="password" id="pass" placeholder="enter password"></p>
+            <button onclick="checkuser()">login</button>
+             <button onclick="showform()">create account</button>
+
+
+            `
+        }
+        function showform(){
+           root.innerHTML=`
+           <h1>Sign Up</h1>
+            <p><input type="text" id="name" placeholder="enter name"> </p>
+            <p><input type="email" id="email" placeholder="enter email"> </p>
+            <p><input type="password" id="pass" placeholder="enter password"> </p>
+            <p><input type="date" id="dob" placeholder="enter date of birth"> </p>
+            <button onclick="Adduser()">Register</button>
+           `
+        }
+        function deleteuser(index) {
+        users.splice(index,1);
+        showuser()
+      }
+        function showuser(){
+            let length=users.length
+            let str=""
+            for(let i=0;i<length;i++)
+            {
+                str+=`<div>${users[i].name}-
+                    ${users[i].email}-
+                    ${users[i].pass}-
+                    ${users[i].dob}
+                    <button onclick='deleteuser(${i})'>delete</button>`
+            }
+            data.innerHTML=str
+        }
+        function Adduser(){
+            let n=document.getElementById("name").value
+            let e=document.getElementById("email").value
+            let p=document.getElementById("pass").value
+            let d=document.getElementById("dob").value
+            let user={
+                name:n,
+                email:e,
+                pass:p,
+                dob:d
+            }
+            users.push(user)
+           // showuser();
+            showlogin()
+        }
+    </script>
+    <style>
+        .container{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+
+        }
+        .box{
+            border: 2px solid silver;
+            width: 400px;
+            padding: 20px;
+            border-radius: 30px;
+            height: 600px;
+        }
+        input{
+            padding: 10px;
+            width: 90%;
+            border-radius: 20px;
+        }
+        button{
+            padding: 10px;
+            border-radius: 20px;
+            background-color: blue;
+            color: white;
+            width: 50%;
+            border: solid whitesmoke;
+            
+        }
+        button:hover{
+            transform: scale(1.2,1.2);
+           
+        }
+    </style>
+</head>
+<body onload="showlogin()">
+    <div class="container">
+
+        <div class="box">
+            <!-- <h1>Sign Up</h1>
+            <p><input type="text" id="name" placeholder="enter name"> </p>
+            <p><input type="email" id="email" placeholder="enter email"> </p>
+            <p><input type="password" id="pass" placeholder="enter password"> </p>
+            <p><input type="date" id="dob" placeholder="enter date of birth"> </p>
+            <button onclick="Adduser()">Register</button> -->
+            <div id="root">
+            </div>
+            <div id="data">
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
