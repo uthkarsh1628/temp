@@ -23,6 +23,7 @@
       }
       const ncart =(id) =>{
         cart[id]=cart[id]-1;
+        cart[id]<1 && delete cart[id]
         console.log(cart)
         showCart()
       }
@@ -37,6 +38,8 @@
           }
         });
         divCart.innerHTML = str;
+        let count=Object.keys(cart).length
+        items.innerHTML=count
         showtotal()
       };
       const showProducts = () => {
@@ -58,17 +61,29 @@
             return sum+value.price*(cart[value.id]?cart[value.id]:0)
         },0);
 
-        divtotal.innerHTML=`order value :${t}`
+        divtotal.innerHTML=`order value :$${t}` 
+      }
+      const displaycart =()=>{
+        divcartblock.style.display="block"
+      }
+      const hidecart =()=>{
+        divcartblock.style.display="none"
       }
     </script>
   </head>
   <body onload="showProducts()">
     <h1>My Store</h1>
+    <h4 onclick="displaycart()">Cart:<span id="items"></span></h4>
     <hr />
     <h3>Products</h3>
     <div id="divProducts"></div>
+
+    <div id="divcartblock"style="display:none">
     <h3>My Cart</h3>
     <div id="divCart"></div>
     <div id="divtotal"></div>
+    <button onclick="hidecart()">close</button>
+   </div>
+
   </body>
 </html>
